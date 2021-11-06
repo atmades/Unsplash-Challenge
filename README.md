@@ -1,4 +1,4 @@
-# UnsplashWork
+# Unsplash Challenge
 
 ## Using API Unsplash
 API link https://unsplash.com/documentation
