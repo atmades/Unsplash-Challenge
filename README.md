@@ -1,6 +1,6 @@
 # UnsplashWork
 
-Using API Unsplash
+## Using API Unsplash
 API link https://unsplash.com/documentation
 
 There is a tabbar with two tabs on the Start screen.
@@ -11,16 +11,25 @@ When you click on a cell, you go to the detailed information screen.
 The detailed information screen contains a photo, author's name, creation date, location and number of downloads.
 The screen also contains a button, clicking on which can add a photo to the list of favorite photos and remove it from it.
 
-✅ The layout of the application is made by code, without xib and storyboard
-✅ Layout is implemented through Auto Layout
-✅ UIKit
-✅ REST API
-✅ Used one third-party library Cocoa Pods SDWebImage https://github.com/SDWebImage/SDWebImage
-✅ Implemented 1 alert
-✅ The task took 2 business days
+## 🔥 Necessary
+:white_check_mark: The layout of the application is made by code, without xib and storyboard.
+
+:white_check_mark: Layout is implemented through Auto Layout.
+
+:white_check_mark: UIKit.
+
+:white_check_mark: REST API
+
+:white_check_mark: Used one third-party library Cocoa Pods SDWebImage https://github.com/SDWebImage/SDWebImage
+
+:white_check_mark: Implemented 1 alert
+
+:white_check_mark: The task took 2 business days
 
 
-📱 Work example illustration:
+
+## 📱 Work example illustration:
+
 ![](RPReplay_Final1636209113.gif)
 
 
