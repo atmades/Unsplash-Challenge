@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B95A8658273488DB00DE3ACA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A8657273488DB00DE3ACA /* AppDelegate.swift */; };
+		B95A865A273488DB00DE3ACA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A8659273488DB00DE3ACA /* SceneDelegate.swift */; };
+		B95A865C273488DB00DE3ACA /* FavoritsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A865B273488DB00DE3ACA /* FavoritsViewController.swift */; };
+		B95A8661273488E600DE3ACA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B95A8660273488E600DE3ACA /* Assets.xcassets */; };
+		B95A8664273488E600DE3ACA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B95A8662273488E600DE3ACA /* LaunchScreen.storyboard */; };
+		B95A866E273489AC00DE3ACA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A866D273489AC00DE3ACA /* MainTabBarController.swift */; };
+		B95A867227348A1000DE3ACA /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A867127348A1000DE3ACA /* PhotosCollectionViewController.swift */; };
+		B95A867527348C0000DE3ACA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A867427348C0000DE3ACA /* Models.swift */; };
+		B95A867827348C2A00DE3ACA /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A867727348C2A00DE3ACA /* NetworkService.swift */; };
+		B95A867F27348C5B00DE3ACA /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A867E27348C5B00DE3ACA /* NetworkDataFetcher.swift */; };
+		B95A868227348C8300DE3ACA /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A868127348C8300DE3ACA /* PhotosCell.swift */; };
+		B95A868D2734DDB500DE3ACA /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A868C2734DDB500DE3ACA /* DetailsViewController.swift */; };
+		B95A8690273561DE00DE3ACA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A868F273561DE00DE3ACA /* Constants.swift */; };
+		B95A86952735702100DE3ACA /* Extension+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A86942735702100DE3ACA /* Extension+ActivityIndicator.swift */; };
+		B95A869E27357BA200DE3ACA /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A869D27357BA200DE3ACA /* Favorites.swift */; };
+		B95A86A327359A3100DE3ACA /* FavoritPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A86A227359A3100DE3ACA /* FavoritPhotoCell.swift */; };
+		B95A86A92735B56C00DE3ACA /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A86A82735B56C00DE3ACA /* Detail.swift */; };
+		FB3E869F47E7F23DEA7669FD /* Pods_UnsplashTest_v1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDCB2D1C1401808976C6F700 /* Pods_UnsplashTest_v1.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0EFC34281F0C43AA2CF9DB17 /* Pods-UnsplashTest v1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashTest v1.debug.xcconfig"; path = "Target Support Files/Pods-UnsplashTest v1/Pods-UnsplashTest v1.debug.xcconfig"; sourceTree = "<group>"; };
+		441DE4A7F39C6197A43D797F /* Pods-UnsplashTest v1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashTest v1.release.xcconfig"; path = "Target Support Files/Pods-UnsplashTest v1/Pods-UnsplashTest v1.release.xcconfig"; sourceTree = "<group>"; };
+		B95A8654273488DB00DE3ACA /* UnsplashTest v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UnsplashTest v1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B95A8657273488DB00DE3ACA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B95A8659273488DB00DE3ACA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B95A865B273488DB00DE3ACA /* FavoritsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritsViewController.swift; sourceTree = "<group>"; };
+		B95A8660273488E600DE3ACA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B95A8663273488E600DE3ACA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B95A8665273488E600DE3ACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B95A866D273489AC00DE3ACA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		B95A867127348A1000DE3ACA /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		B95A867427348C0000DE3ACA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		B95A867727348C2A00DE3ACA /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		B95A867E27348C5B00DE3ACA /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		B95A868127348C8300DE3ACA /* PhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
+		B95A868C2734DDB500DE3ACA /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		B95A868F273561DE00DE3ACA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B95A86942735702100DE3ACA /* Extension+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ActivityIndicator.swift"; sourceTree = "<group>"; };
+		B95A869D27357BA200DE3ACA /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		B95A86A227359A3100DE3ACA /* FavoritPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritPhotoCell.swift; sourceTree = "<group>"; };
+		B95A86A82735B56C00DE3ACA /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		BDCB2D1C1401808976C6F700 /* Pods_UnsplashTest_v1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnsplashTest_v1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B95A8651273488DB00DE3ACA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB3E869F47E7F23DEA7669FD /* Pods_UnsplashTest_v1.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4656E960F6A2A4FEFBFFC009 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0EFC34281F0C43AA2CF9DB17 /* Pods-UnsplashTest v1.debug.xcconfig */,
+				441DE4A7F39C6197A43D797F /* Pods-UnsplashTest v1.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7FBC2B546B055977C3B0C54A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDCB2D1C1401808976C6F700 /* Pods_UnsplashTest_v1.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B95A864B273488DB00DE3ACA = {
+			isa = PBXGroup;
+			children = (
+				B95A8656273488DB00DE3ACA /* UnsplashTest v1 */,
+				B95A8655273488DB00DE3ACA /* Products */,
+				4656E960F6A2A4FEFBFFC009 /* Pods */,
+				7FBC2B546B055977C3B0C54A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B95A8655273488DB00DE3ACA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B95A8654273488DB00DE3ACA /* UnsplashTest v1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B95A8656273488DB00DE3ACA /* UnsplashTest v1 */ = {
+			isa = PBXGroup;
+			children = (
+				B95A8657273488DB00DE3ACA /* AppDelegate.swift */,
+				B95A8659273488DB00DE3ACA /* SceneDelegate.swift */,
+				B95A867A27348C3600DE3ACA /* Service */,
+				B95A866D273489AC00DE3ACA /* MainTabBarController.swift */,
+				B95A867127348A1000DE3ACA /* PhotosCollectionViewController.swift */,
+				B95A868127348C8300DE3ACA /* PhotosCell.swift */,
+				B95A868C2734DDB500DE3ACA /* DetailsViewController.swift */,
+				B95A86972735703C00DE3ACA /* Extension */,
+				B95A868F273561DE00DE3ACA /* Constants.swift */,
+				B95A865B273488DB00DE3ACA /* FavoritsViewController.swift */,
+				B95A86A227359A3100DE3ACA /* FavoritPhotoCell.swift */,
+				B95A8660273488E600DE3ACA /* Assets.xcassets */,
+				B95A8662273488E600DE3ACA /* LaunchScreen.storyboard */,
+				B95A8665273488E600DE3ACA /* Info.plist */,
+			);
+			path = "UnsplashTest v1";
+			sourceTree = "<group>";
+		};
+		B95A867A27348C3600DE3ACA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B95A867C27348C3F00DE3ACA /* Models */,
+				B95A867727348C2A00DE3ACA /* NetworkService.swift */,
+				B95A867E27348C5B00DE3ACA /* NetworkDataFetcher.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B95A867C27348C3F00DE3ACA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B95A867427348C0000DE3ACA /* Models.swift */,
+				B95A869D27357BA200DE3ACA /* Favorites.swift */,
+				B95A86A82735B56C00DE3ACA /* Detail.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B95A86972735703C00DE3ACA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B95A86942735702100DE3ACA /* Extension+ActivityIndicator.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B95A8653273488DB00DE3ACA /* UnsplashTest v1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B95A8668273488E600DE3ACA /* Build configuration list for PBXNativeTarget "UnsplashTest v1" */;
+			buildPhases = (
+				4BB77D0783E3009F6A51427D /* [CP] Check Pods Manifest.lock */,
+				B95A8650273488DB00DE3ACA /* Sources */,
+				B95A8651273488DB00DE3ACA /* Frameworks */,
+				B95A8652273488DB00DE3ACA /* Resources */,
+				D471228E03A33764C2F6B57C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UnsplashTest v1";
+			productName = "UnsplashTest v1";
+			productReference = B95A8654273488DB00DE3ACA /* UnsplashTest v1.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B95A864C273488DB00DE3ACA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					B95A8653273488DB00DE3ACA = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = B95A864F273488DB00DE3ACA /* Build configuration list for PBXProject "UnsplashTest v1" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B95A864B273488DB00DE3ACA;
+			productRefGroup = B95A8655273488DB00DE3ACA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B95A8653273488DB00DE3ACA /* UnsplashTest v1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B95A8652273488DB00DE3ACA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B95A8664273488E600DE3ACA /* LaunchScreen.storyboard in Resources */,
+				B95A8661273488E600DE3ACA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4BB77D0783E3009F6A51427D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UnsplashTest v1-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D471228E03A33764C2F6B57C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnsplashTest v1/Pods-UnsplashTest v1-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnsplashTest v1/Pods-UnsplashTest v1-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UnsplashTest v1/Pods-UnsplashTest v1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B95A8650273488DB00DE3ACA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B95A867F27348C5B00DE3ACA /* NetworkDataFetcher.swift in Sources */,
+				B95A865C273488DB00DE3ACA /* FavoritsViewController.swift in Sources */,
+				B95A866E273489AC00DE3ACA /* MainTabBarController.swift in Sources */,
+				B95A8658273488DB00DE3ACA /* AppDelegate.swift in Sources */,
+				B95A867527348C0000DE3ACA /* Models.swift in Sources */,
+				B95A8690273561DE00DE3ACA /* Constants.swift in Sources */,
+				B95A86952735702100DE3ACA /* Extension+ActivityIndicator.swift in Sources */,
+				B95A867227348A1000DE3ACA /* PhotosCollectionViewController.swift in Sources */,
+				B95A86A327359A3100DE3ACA /* FavoritPhotoCell.swift in Sources */,
+				B95A865A273488DB00DE3ACA /* SceneDelegate.swift in Sources */,
+				B95A867827348C2A00DE3ACA /* NetworkService.swift in Sources */,
+				B95A86A92735B56C00DE3ACA /* Detail.swift in Sources */,
+				B95A868227348C8300DE3ACA /* PhotosCell.swift in Sources */,
+				B95A868D2734DDB500DE3ACA /* DetailsViewController.swift in Sources */,
+				B95A869E27357BA200DE3ACA /* Favorites.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B95A8662273488E600DE3ACA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B95A8663273488E600DE3ACA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B95A8666273488E600DE3ACA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B95A8667273488E600DE3ACA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B95A8669273488E600DE3ACA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EFC34281F0C43AA2CF9DB17 /* Pods-UnsplashTest v1.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89B98ZU3PL;
+				INFOPLIST_FILE = "UnsplashTest v1/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "max.UnsplashTest-v1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B95A866A273488E600DE3ACA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 441DE4A7F39C6197A43D797F /* Pods-UnsplashTest v1.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89B98ZU3PL;
+				INFOPLIST_FILE = "UnsplashTest v1/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "max.UnsplashTest-v1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B95A864F273488DB00DE3ACA /* Build configuration list for PBXProject "UnsplashTest v1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B95A8666273488E600DE3ACA /* Debug */,
+				B95A8667273488E600DE3ACA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B95A8668273488E600DE3ACA /* Build configuration list for PBXNativeTarget "UnsplashTest v1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B95A8669273488E600DE3ACA /* Debug */,
+				B95A866A273488E600DE3ACA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B95A864C273488DB00DE3ACA /* Project object */;
+}
