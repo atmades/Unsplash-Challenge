@@ -26,6 +26,12 @@ The screen also contains a button, clicking on which can add a photo to the list
 
 :white_check_mark: The task took 2 business days
 
+## 🔥 Was Added
+:white_check_mark: Building a UI outside of the ViewController. Using loadView()
+
+:white_check_mark: Protocols
+
+:white_check_mark: Dependency Injections (viewModels and networkServices)
 
 
 ## 📱 Work example illustration:
