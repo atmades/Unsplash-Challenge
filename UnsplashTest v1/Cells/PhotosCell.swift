@@ -28,7 +28,7 @@ class PhotosCell: UICollectionViewCell {
     let photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+        imageView.backgroundColor = #colorLiteral(red: 0.9224835634, green: 0.9457015395, blue: 0.9815433621, alpha: 1)
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
