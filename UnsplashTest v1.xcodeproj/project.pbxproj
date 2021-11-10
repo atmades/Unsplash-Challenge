@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B94CC5652739B8330065B4DF /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94CC5642739B8330065B4DF /* FavoritesView.swift */; };
+		B94CC5B4273A0BE20065B4DF /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94CC5B3273A0BE20065B4DF /* FavoritesViewModel.swift */; };
+		B94CC5BB273A100A0065B4DF /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94CC5BA273A100A0065B4DF /* DetailsViewModel.swift */; };
+		B94CC5BE273A1A970065B4DF /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94CC5BD273A1A960065B4DF /* DetailsView.swift */; };
+		B94CC5C3273AB66C0065B4DF /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94CC5C2273AB66C0065B4DF /* PhotosViewModel.swift */; };
+		B94CC5C7273AD79E0065B4DF /* PhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94CC5C6273AD79E0065B4DF /* PhotosView.swift */; };
 		B95A8658273488DB00DE3ACA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A8657273488DB00DE3ACA /* AppDelegate.swift */; };
 		B95A865A273488DB00DE3ACA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A8659273488DB00DE3ACA /* SceneDelegate.swift */; };
 		B95A865C273488DB00DE3ACA /* FavoritsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95A865B273488DB00DE3ACA /* FavoritsViewController.swift */; };
@@ -30,6 +36,12 @@
 /* Begin PBXFileReference section */
 		0EFC34281F0C43AA2CF9DB17 /* Pods-UnsplashTest v1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashTest v1.debug.xcconfig"; path = "Target Support Files/Pods-UnsplashTest v1/Pods-UnsplashTest v1.debug.xcconfig"; sourceTree = "<group>"; };
 		441DE4A7F39C6197A43D797F /* Pods-UnsplashTest v1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashTest v1.release.xcconfig"; path = "Target Support Files/Pods-UnsplashTest v1/Pods-UnsplashTest v1.release.xcconfig"; sourceTree = "<group>"; };
+		B94CC5642739B8330065B4DF /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		B94CC5B3273A0BE20065B4DF /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		B94CC5BA273A100A0065B4DF /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		B94CC5BD273A1A960065B4DF /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		B94CC5C2273AB66C0065B4DF /* PhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModel.swift; sourceTree = "<group>"; };
+		B94CC5C6273AD79E0065B4DF /* PhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosView.swift; sourceTree = "<group>"; };
 		B95A8654273488DB00DE3ACA /* UnsplashTest v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UnsplashTest v1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B95A8657273488DB00DE3ACA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B95A8659273488DB00DE3ACA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +93,48 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B94CC55E2739AE420065B4DF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B95A866D273489AC00DE3ACA /* MainTabBarController.swift */,
+				B95A867127348A1000DE3ACA /* PhotosCollectionViewController.swift */,
+				B95A868C2734DDB500DE3ACA /* DetailsViewController.swift */,
+				B95A865B273488DB00DE3ACA /* FavoritsViewController.swift */,
+				B94CC5B6273A0FD90065B4DF /* ViewModels */,
+				B94CC5B8273A0FE80065B4DF /* Views */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B94CC5612739AE580065B4DF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B95A868127348C8300DE3ACA /* PhotosCell.swift */,
+				B95A86A227359A3100DE3ACA /* FavoritPhotoCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B94CC5B6273A0FD90065B4DF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B94CC5C2273AB66C0065B4DF /* PhotosViewModel.swift */,
+				B94CC5B3273A0BE20065B4DF /* FavoritesViewModel.swift */,
+				B94CC5BA273A100A0065B4DF /* DetailsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B94CC5B8273A0FE80065B4DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B94CC5C6273AD79E0065B4DF /* PhotosView.swift */,
+				B94CC5642739B8330065B4DF /* FavoritesView.swift */,
+				B94CC5BD273A1A960065B4DF /* DetailsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B95A864B273488DB00DE3ACA = {
 			isa = PBXGroup;
 			children = (
@@ -105,14 +159,10 @@
 				B95A8657273488DB00DE3ACA /* AppDelegate.swift */,
 				B95A8659273488DB00DE3ACA /* SceneDelegate.swift */,
 				B95A867A27348C3600DE3ACA /* Service */,
-				B95A866D273489AC00DE3ACA /* MainTabBarController.swift */,
-				B95A867127348A1000DE3ACA /* PhotosCollectionViewController.swift */,
-				B95A868127348C8300DE3ACA /* PhotosCell.swift */,
-				B95A868C2734DDB500DE3ACA /* DetailsViewController.swift */,
+				B94CC55E2739AE420065B4DF /* ViewControllers */,
+				B94CC5612739AE580065B4DF /* Cells */,
 				B95A86972735703C00DE3ACA /* Extension */,
 				B95A868F273561DE00DE3ACA /* Constants.swift */,
-				B95A865B273488DB00DE3ACA /* FavoritsViewController.swift */,
-				B95A86A227359A3100DE3ACA /* FavoritPhotoCell.swift */,
 				B95A8660273488E600DE3ACA /* Assets.xcassets */,
 				B95A8662273488E600DE3ACA /* LaunchScreen.storyboard */,
 				B95A8665273488E600DE3ACA /* Info.plist */,
@@ -134,8 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				B95A867427348C0000DE3ACA /* Models.swift */,
-				B95A869D27357BA200DE3ACA /* Favorites.swift */,
 				B95A86A82735B56C00DE3ACA /* Detail.swift */,
+				B95A869D27357BA200DE3ACA /* Favorites.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -262,20 +312,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				B95A867F27348C5B00DE3ACA /* NetworkDataFetcher.swift in Sources */,
+				B94CC5BE273A1A970065B4DF /* DetailsView.swift in Sources */,
 				B95A865C273488DB00DE3ACA /* FavoritsViewController.swift in Sources */,
 				B95A866E273489AC00DE3ACA /* MainTabBarController.swift in Sources */,
 				B95A8658273488DB00DE3ACA /* AppDelegate.swift in Sources */,
 				B95A867527348C0000DE3ACA /* Models.swift in Sources */,
 				B95A8690273561DE00DE3ACA /* Constants.swift in Sources */,
 				B95A86952735702100DE3ACA /* Extension+ActivityIndicator.swift in Sources */,
+				B94CC5B4273A0BE20065B4DF /* FavoritesViewModel.swift in Sources */,
 				B95A867227348A1000DE3ACA /* PhotosCollectionViewController.swift in Sources */,
 				B95A86A327359A3100DE3ACA /* FavoritPhotoCell.swift in Sources */,
 				B95A865A273488DB00DE3ACA /* SceneDelegate.swift in Sources */,
 				B95A867827348C2A00DE3ACA /* NetworkService.swift in Sources */,
 				B95A86A92735B56C00DE3ACA /* Detail.swift in Sources */,
+				B94CC5652739B8330065B4DF /* FavoritesView.swift in Sources */,
 				B95A868227348C8300DE3ACA /* PhotosCell.swift in Sources */,
 				B95A868D2734DDB500DE3ACA /* DetailsViewController.swift in Sources */,
+				B94CC5C7273AD79E0065B4DF /* PhotosView.swift in Sources */,
+				B94CC5C3273AB66C0065B4DF /* PhotosViewModel.swift in Sources */,
 				B95A869E27357BA200DE3ACA /* Favorites.swift in Sources */,
+				B94CC5BB273A100A0065B4DF /* DetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

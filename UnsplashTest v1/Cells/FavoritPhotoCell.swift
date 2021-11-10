@@ -14,7 +14,7 @@ class FavoritPhotoCell: UITableViewCell {
     //    MARK: - Properrties
     static let reuseId = "FavoritPhotoCell"
     
-    //    MARK: - UI Views
+    //    MARK: - UI Elements
     private let mainStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -52,11 +52,8 @@ class FavoritPhotoCell: UITableViewCell {
         return indicator
     }()
     
-    //    MARK: - Private Functions
+    //    MARK: - Setup Layout
     private func setupLayout() {
-        viewForImage.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        viewForImage.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        
         mainStackView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
         mainStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
         mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
@@ -80,7 +77,7 @@ class FavoritPhotoCell: UITableViewCell {
         mainStackView.addArrangedSubview(nameLabel)
     }
     
-    //    MARK: - Public Func
+    //    MARK: - Setup UI
     public func setupCell(detail: Detail) {
         nameLabel.text = detail.name
         guard let url = URL(string: detail.urlPhoto) else { return }

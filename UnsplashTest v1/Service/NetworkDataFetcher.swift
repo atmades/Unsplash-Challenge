@@ -7,34 +7,32 @@
 
 import Foundation
 
-class NetworkDataFetcher {
+protocol NetworkDataFetcher {
+    
+    func fetchSearchResults(searchTerm: String, complition: @escaping (SeachResults?) -> ())
+    func fetchPhotoStatictic(id: String, complition: @escaping (Statictic?) -> ())
+    func fetchRandomPhotos(complition: @escaping ([UnsplashPhoto]?) -> ())
+}
+
+class NetworkDataFetcherImpl: NetworkDataFetcher  {
     
     var networkService = NetworkService()
     
-//    func fetchImages(searchTerm: String, complition: @escaping (SeachResults?) -> ()) {
-//        networkService.request(searchTerm: searchTerm) { (data, error) in
-//            if let error = error {
-//                print("Error recived requesting data: \(error.localizedDescription)")
-//                complition(nil)
-//
-//            }
-//            let decode = self.decodeJSON(type: SeachResults.self, from: data)
-//            complition(decode)
-//        }
-//    }
+    //    MARK: - Protocols Functions
     
-    func fetchImages(searchTerm: String, complition: @escaping (SeachResults?) -> ()) {
+    //  For Searching
+    func fetchSearchResults(searchTerm: String, complition: @escaping (SeachResults?) -> ()) {
         networkService.request(searchTerm: searchTerm) { (data, error) in
             if let error = error {
                 print("Error recived requesting data: \(error.localizedDescription)")
                 complition(nil)
-                
             }
             let decode = self.decodeJSON(type: SeachResults.self, from: data)
             complition(decode)
         }
     }
     
+    //  For Statictics
     func fetchPhotoStatictic(id: String, complition: @escaping (Statictic?) -> ()) {
         networkService.requestPhotoStatictic(id: id) { (data, error) in
             if let error = error {
@@ -46,6 +44,7 @@ class NetworkDataFetcher {
         }
     }
     
+    //  For Random
     func fetchRandomPhotos(complition: @escaping ([UnsplashPhoto]?) -> ()) {
         networkService.requestRandomPhotos { (data, error) in
             if let error = error {
@@ -57,6 +56,7 @@ class NetworkDataFetcher {
         }
     }
     
+//    MARK: - Decode Generic
     func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> T? {
         let decoder = JSONDecoder()
         guard let data = from else { return nil }
@@ -68,5 +68,4 @@ class NetworkDataFetcher {
             return nil
         }
     }
-    
 }

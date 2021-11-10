@@ -14,7 +14,4 @@ struct Detail {
     let created: String
     let location: String?
     let urlPhoto: String
-    let width: Int
-    let height: Int
-    let color: String
 }

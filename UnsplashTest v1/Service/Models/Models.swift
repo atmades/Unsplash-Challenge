@@ -34,7 +34,6 @@ struct UserPhoto: Decodable {
     let name: String
 }
 
-
 struct Statictic: Decodable {
     let id: String
     let downloads: Int

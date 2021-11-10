@@ -1,58 +1,36 @@
 //
-//  DetailsViewController.swift
+//  DetailsView.swift
 //  UnsplashTest v1
 //
-//  Created by Максим on 05/11/2021.
+//  Created by Максим on 08/11/2021.
 //
 
 import UIKit
 import SDWebImage
 
+protocol DetailsViewDelegate: AnyObject {
+    func didTapAdd()
+    func didTapRemove()
+}
 
-
-class DetailsViewController: UIViewController {
+class DetailsView: UIView {
     
-    //    MARK: - Properties
-    var detail: Detail
-    var index: Int?
-    
-    var onWillDismiss: (() -> Void)?
-    
-    var networkDataFetcher = NetworkDataFetcher()
-    var singleton = Favorites.sharedInstance
-    
-    init(detail: Detail) {
-        self.detail = detail
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func checkFavorits(id: String) -> Bool{
-        if let _ = singleton.itemsDic[id]{
-            return true
-        }
-        return false
-    }
+    weak var delegate: DetailsViewDelegate?
     
     //    MARK: - UI Elements
-    
-    var scrollView: UIScrollView = {
+    private  var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
     
-    var contentView: UIView = {
+    private var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    
-    var viewForImage: UIView = {
+    private var viewForImage: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -61,7 +39,7 @@ class DetailsViewController: UIViewController {
     var photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-
+        
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -73,6 +51,7 @@ class DetailsViewController: UIViewController {
         return indicator
     }()
     
+    //  Labels
     private var nameLabel: UILabel = {
         let label = UILabel()
         label.text = "nameLabel"
@@ -101,15 +80,24 @@ class DetailsViewController: UIViewController {
         return label
     }()
     
-    //    Button
-    var bgForButton: UIView = {
+    var detailStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.distribution = .equalCentering
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }() // Contains all Labels
+    
+    //  Buttons
+    private var bgForButton: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }() // Contains addWeatherButton
     
-    var addTtoFavoritsButton: UIButton = {
+    private var addTtoFavoritsButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .black
         button.layer.cornerRadius = 6
@@ -122,16 +110,17 @@ class DetailsViewController: UIViewController {
     }()
     
     @objc func didTapAdd() {
-        singleton.addToFavoritsArray(item: detail)
-        addTtoFavoritsButton.isHidden = true
-        removeFromFavoritsButton.isHidden = false
+        delegate?.didTapAdd()
+        isFavaritNow(isFavorit: true)
     }
     
-    var removeFromFavoritsButton: UIButton = {
+    private var removeFromFavoritsButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .black
+        button.backgroundColor = .white
         button.layer.cornerRadius = 6
-        button.setTitleColor(.white, for: .normal)
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = UIColor.black.cgColor
+        button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         button.setTitle("Remove from favorits", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -140,45 +129,16 @@ class DetailsViewController: UIViewController {
     }()
     
     @objc func didTapRemove() {
-        
-        //  searching the index en favorits array
-        self.index = singleton.getIndex(id: detail.id)
-        guard let indexForRemove = self.index else { return }
-        
-        let alert = UIAlertController(title: "Remove from Favorits?", message: "Would you like to remove this photo?", preferredStyle: .alert)
-        
-        // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "Remove", style: .default, handler: {action in
-            self.singleton.removeFromFavoritsArray(index: indexForRemove)
-            self.removeFromFavoritsButton.isHidden = true
-            self.addTtoFavoritsButton.isHidden = false
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
-        }))
-        
-        // show the alert
-        self.present(alert, animated: true, completion: nil)
+        isFavaritNow(isFavorit: false)
+        delegate?.didTapRemove()
     }
     
-    private func removePhotoFromFavorits(index: Int) {
-
-    }
-    
-    var detailStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.alignment = .center
-        stackView.distribution = .equalCentering
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
-    
-    
+    //    MARK: - Setup Layout Functions
     private func addSubviews() {
-        view.addSubview(scrollView)
+        addSubview(scrollView)
         scrollView.addSubview(contentView)
         
-        view.addSubview(bgForButton)
+        addSubview(bgForButton)
         bgForButton.addSubview(addTtoFavoritsButton)
         bgForButton.addSubview(removeFromFavoritsButton)
         
@@ -196,19 +156,17 @@ class DetailsViewController: UIViewController {
         viewForImage.addSubview(photoImageView)
         viewForImage.addSubview(activityIndicator)
     }
-    
+
     //    Constraints of Main Views
-    private func setupLoyautViews() {
-        
-        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    private func setupLayoutViews() {
+        scrollView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: bgForButton.topAnchor).isActive = true
         
-        
-        bgForButton.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        bgForButton.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        bgForButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        bgForButton.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        bgForButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        bgForButton.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         bgForButton.heightAnchor.constraint(equalToConstant: 108).isActive = true
         
         addTtoFavoritsButton.topAnchor.constraint(equalTo: bgForButton.topAnchor, constant: 8).isActive = true
@@ -222,8 +180,8 @@ class DetailsViewController: UIViewController {
         removeFromFavoritsButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
     }
     
-    //    Constraints views in ScrollView
-    private func setupLoyautScrollViews() {
+    //  Constraints views in ScrollView
+    private func setupLayoutScrollViews() {
         
         contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
         contentView.topAnchor.constraint(equalTo: scrollView.topAnchor,constant: 0).isActive = true
@@ -245,14 +203,29 @@ class DetailsViewController: UIViewController {
         photoImageView.leadingAnchor.constraint(equalTo: viewForImage.leadingAnchor).isActive = true
         photoImageView.topAnchor.constraint(equalTo: viewForImage.topAnchor).isActive = true
         photoImageView.bottomAnchor.constraint(equalTo: viewForImage.bottomAnchor).isActive = true
-
+        
         activityIndicator.centerYAnchor.constraint(equalTo: viewForImage.centerYAnchor).isActive = true
         activityIndicator.centerXAnchor.constraint(equalTo: viewForImage.centerXAnchor).isActive = true
     }
     
-    //    MARK: - Setup
+    private func createSubviews() {
+        addSubviews()
+        setupLayoutViews()
+        setupLayoutScrollViews()
+    }
     
-    private func setup() {
+    //    MARK: - Setup UI Functions
+    func isFavaritNow(isFavorit: Bool) {
+        if isFavorit {
+            self.addTtoFavoritsButton.isHidden = true
+            self.removeFromFavoritsButton.isHidden = false
+        } else {
+            self.removeFromFavoritsButton.isHidden = true
+            self.addTtoFavoritsButton.isHidden = false
+        }
+    }
+    
+    func setupUI(detail: Detail, isFavorit: Bool) {
         nameLabel.text = detail.name
         downloadsLabel.text = String(detail.downloads)
         createdLabel.text = detail.created
@@ -261,35 +234,20 @@ class DetailsViewController: UIViewController {
             locationLabel.text = locattion
         }
         
-        if let index = singleton.getIndex(id: detail.id) {
-            self.index = index
-            addTtoFavoritsButton.isHidden = true
-            removeFromFavoritsButton.isHidden = false
-        } else {
-            removeFromFavoritsButton.isHidden = true
-            addTtoFavoritsButton.isHidden = false
-        }
+        isFavaritNow(isFavorit: isFavorit)
         
         guard let url = URL(string: detail.urlPhoto) else { return }
         photoImageView.sd_setImage(with: url, completed: nil)
         activityIndicator.turnOff()
     }
     
-    //    MARK: - LifeCycle
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        setupLoyautViews()
-        setupLoyautScrollViews()
+    // MARK: - Init
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        createSubviews()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        addSubviews()
-        setup()
-    }
-    
-    deinit {
-        onWillDismiss?()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
