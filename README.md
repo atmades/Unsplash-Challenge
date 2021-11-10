@@ -36,7 +36,7 @@ The screen also contains a button, clicking on which can add a photo to the list
 
 ## 📱 Work example illustration:
 
-(![RPReplay_Final1636556320 2](https://user-images.githubusercontent.com/31052641/141138859-8edc6c61-312b-439d-81fb-97cdd133001b.gif)
+![RPReplay_Final1636556320 2](https://user-images.githubusercontent.com/31052641/141138859-8edc6c61-312b-439d-81fb-97cdd133001b.gif)
 
 
 ✨ In order for the app to work correctly, you need to add a key to access the Unsplash API.Unsplash conditions. You can get it by registering on the developer site: https://unsplash.com/documentation To insert the key: Constants -> clientID
