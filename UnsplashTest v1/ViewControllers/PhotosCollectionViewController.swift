@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class PhotosCollectionViewController: UIViewController {
     
     //    MARK: - Properties
