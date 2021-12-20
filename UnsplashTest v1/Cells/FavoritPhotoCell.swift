@@ -22,7 +22,6 @@ class FavoritPhotoCell: UITableViewCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-    
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 22, weight: .light)
@@ -31,20 +30,17 @@ class FavoritPhotoCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
     private var viewForImage: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
     private let photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
     private var activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(style: .medium)
         indicator.translatesAutoresizingMaskIntoConstraints = false
@@ -67,12 +63,10 @@ class FavoritPhotoCell: UITableViewCell {
         activityIndicator.centerYAnchor.constraint(equalTo: viewForImage.centerYAnchor).isActive = true
         activityIndicator.centerXAnchor.constraint(equalTo: viewForImage.centerXAnchor).isActive = true
     }
-    
     private func addSubview() {
         contentView.addSubview(mainStackView)
         viewForImage.addSubview(photoImageView)
         viewForImage.addSubview(activityIndicator)
-        
         mainStackView.addArrangedSubview(viewForImage)
         mainStackView.addArrangedSubview(nameLabel)
     }
@@ -91,11 +85,9 @@ class FavoritPhotoCell: UITableViewCell {
         backgroundColor = .white
         addSubview()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         setupLayout()

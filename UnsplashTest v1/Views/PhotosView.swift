@@ -34,7 +34,6 @@ class PhotosView: UIView {
         get { return collectionView.delegate }
         set { collectionView.delegate = newValue }
     }
-
     var dataSource: UICollectionViewDataSource? {
         get { return collectionView.dataSource }
         set { collectionView.dataSource = newValue }
@@ -44,7 +43,6 @@ class PhotosView: UIView {
     func registerClass(cellClass: AnyClass?, forCellReuseIdentifier identifier: String) {
         collectionView.register(cellClass, forCellWithReuseIdentifier: identifier)
     }
-    
     func refreshUI() {
         collectionView.reloadData()
     }
@@ -55,7 +53,6 @@ class PhotosView: UIView {
         backgroundColor = .white
         createSubviews()
     }
-
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }

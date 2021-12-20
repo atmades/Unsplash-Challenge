@@ -12,9 +12,7 @@ class PhotosCell: UICollectionViewCell {
     
     //    MARK: - Properrties
     static let reuseId = "PhotosCell"
-    
     var idImage: String?
-    
     var unsplashPhoto: UnsplashPhoto? {
         didSet {
             guard let unsplashPhoto = unsplashPhoto else { return }
@@ -45,7 +43,6 @@ class PhotosCell: UICollectionViewCell {
     private func setupUI() {
         addSubview(photoImageView)
     }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         photoImageView.image = nil
@@ -56,12 +53,10 @@ class PhotosCell: UICollectionViewCell {
         super.layoutSubviews()
         setupLayout()
     }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

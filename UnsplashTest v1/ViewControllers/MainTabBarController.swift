@@ -16,7 +16,6 @@ class MainTabBarController: UITabBarController {
         navigationVC.tabBarItem.image = image
         return navigationVC
     }
-    
     private func setVC() {
         let networkDataFetcher: NetworkDataFetcher = NetworkDataFetcherImpl()
         let viewModelPhotos: PhotosViewModel = PhotosViewModelImpl()

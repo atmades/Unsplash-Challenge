@@ -16,7 +16,6 @@ class DetailsViewController: UIViewController {
     //    MARK: - Properties
     var detailsView = DetailsView()
     weak var delegate: FavoritsWasChangedDelegate?
-    
     var networkDataFetcher: NetworkDataFetcher
     var viewModel: DetailsViewModel
     
@@ -29,7 +28,6 @@ class DetailsViewController: UIViewController {
     //  MARK: - Show Alert
     func showAlert(indexForRemove: Int) {
         let alert = UIAlertController(title: "Remove from Favorits?", message: "Would you like to remove this photo?", preferredStyle: .alert)
-        
         //  add the actions (buttons)
         alert.addAction(UIAlertAction(title: "Remove", style: .default, handler: {action in
             self.viewModel.removeFromFavorites(index: indexForRemove)
@@ -39,7 +37,6 @@ class DetailsViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
             self.detailsView.isFavaritNow(isFavorit: true)
         }))
-        
         //  show the alert
         self.present(alert, animated: true, completion: nil)
     }
@@ -50,7 +47,6 @@ class DetailsViewController: UIViewController {
         self.networkDataFetcher = networkDataFetcher
         super.init(nibName: nil, bundle: nil)
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -59,7 +55,6 @@ class DetailsViewController: UIViewController {
     override func loadView() {
         view = detailsView
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -74,7 +69,6 @@ extension DetailsViewController:  DetailsViewDelegate {
         viewModel.addToFavorites(item: viewModel.detail)
         delegate?.didChanged()
     }
-    
     func didTapRemove() {
         let index = viewModel.getIndex(id: viewModel.detail.id)
         guard let indexForRemove = index else { return }

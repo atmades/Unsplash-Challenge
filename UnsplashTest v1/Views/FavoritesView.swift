@@ -8,31 +8,35 @@
 import UIKit
 
 class FavoritesView: UIView {
-    //    MARK: - For Setup TableView
+    //    MARK: - Delegate DataSource Properties
     var delegate: UITableViewDelegate? {
-        get {
-            return tableView.delegate
-        }
-        set {
-            tableView.delegate = newValue
-        }
+        get { return tableView.delegate }
+        set { tableView.delegate = newValue }
+    }
+    var dataSource: UITableViewDataSource? {
+        get { return tableView.dataSource }
+        set { tableView.dataSource = newValue }
+    }
+    func dequeueReusableCellWithIdentifier(identifier: String) -> UITableViewCell? {
+        return tableView.dequeueReusableCell(withIdentifier: identifier)
     }
     
-    var dataSource: UITableViewDataSource? {
-        get {
-            return tableView.dataSource
-        }
-        set {
-            tableView.dataSource = newValue
-        }
-    }
+    //    MARK: - Setup UI Functions
     
     func registerClass(cellClass: AnyClass?, forCellReuseIdentifier identifier: String) {
         tableView.register(cellClass, forCellReuseIdentifier: identifier)
     }
-    
-    func dequeueReusableCellWithIdentifier(identifier: String) -> UITableViewCell? {
-        return tableView.dequeueReusableCell(withIdentifier: identifier)
+    func setupUI(isEmpty: Bool) {
+        if isEmpty {
+            tableView.isHidden = true
+            emptyLabel.isHidden = false
+        } else {
+            tableView.isHidden = false
+            emptyLabel.isHidden = true
+        }
+    }
+    func reloadTableview() {
+        tableView.reloadData()
     }
     
     //    MARK: - UI Elements
@@ -45,13 +49,12 @@ class FavoritesView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
-    
     private let emptyLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 22, weight: .light)
         label.textAlignment = .center
         label.numberOfLines = 1
-        label.text = "There is no favorits"
+        label.text = "There are no favorites"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -69,28 +72,12 @@ class FavoritesView: UIView {
         tableView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     }
-    
-    //    MARK: - Setup UI Functions
-    func setupUI(isEmpty: Bool) {
-        if isEmpty {
-            tableView.isHidden = true
-            emptyLabel.isHidden = false
-        } else {
-            tableView.isHidden = false
-            emptyLabel.isHidden = true
-        }
-    }
-    
-    func reloadTableview() {
-        tableView.reloadData()
-    }
-    
+
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         createSubviews()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

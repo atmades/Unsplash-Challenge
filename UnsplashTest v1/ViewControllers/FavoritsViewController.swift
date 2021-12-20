@@ -25,19 +25,16 @@ class FavoritsViewController: UIViewController {
         favoritesView.delegate = self
         favoritesView.registerClass(cellClass: FavoritPhotoCell.self, forCellReuseIdentifier: FavoritPhotoCell.reuseId)
     }
-    
     private func refreshUI() {
         favoritesView.reloadTableview()
         let isEmpty = viewModel.checkIsEmpty()
         favoritesView.setupUI(isEmpty: isEmpty)
     }
-    
     // MARK: - Init
     init(viewModel: FavoritesViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -46,12 +43,10 @@ class FavoritsViewController: UIViewController {
     override func loadView() {
         view = favoritesView
     }
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         refreshUI()
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
@@ -65,7 +60,6 @@ extension FavoritsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.getFavorites().count
     }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.favoritesView.dequeueReusableCellWithIdentifier(identifier: FavoritPhotoCell.reuseId) as? FavoritPhotoCell else { return UITableViewCell() }
         let photos = viewModel.getFavorites()
@@ -90,12 +84,12 @@ extension FavoritsViewController: UITableViewDelegate {
         self.navigationController?.present(detailVC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 220
     }
 }
 
+// MARK: - Extension FavoritsWasChangedDelegate
 extension FavoritsViewController: FavoritsWasChangedDelegate {
     func didChanged() {
         self.refreshUI()

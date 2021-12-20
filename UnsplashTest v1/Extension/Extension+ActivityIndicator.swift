@@ -8,12 +8,10 @@
 import UIKit
 
 extension UIActivityIndicatorView {
-    
     public func turnOn() {
         isHidden = false
         startAnimating()
     }
-    
     public func turnOff() {
         isHidden = true
         stopAnimating()

@@ -11,7 +11,6 @@ class Favorites {
     
     //  MARK: - Properties
     private(set) var favorites: [Detail] = []
-    
     static let sharedInstance: Favorites = {
         let instance = Favorites()
         return instance
@@ -25,16 +24,13 @@ class Favorites {
         }
         return false
     }
-    
     func getIndex(id: String) -> Int? {
         guard let index = favorites.firstIndex(where: {$0.id == id}) else { return nil }
         return index
     }
-    
     func addToFavorites(item: Detail) {
         favorites.append(item)
     }
-    
     func removeFromFavorites(index: Int) {
         favorites.remove(at: index)
     }

@@ -23,19 +23,16 @@ class DetailsView: UIView {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
-    
     private var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
     private var viewForImage: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
     var photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -43,14 +40,12 @@ class DetailsView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
     private var activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(style: .medium)
         indicator.translatesAutoresizingMaskIntoConstraints = false
         indicator.turnOn()
         return indicator
     }()
-    
     //  Labels
     private var nameLabel: UILabel = {
         let label = UILabel()
@@ -58,28 +53,25 @@ class DetailsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
     private var locationLabel: UILabel = {
         let label = UILabel()
         label.text = "locationLabel"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
     private var downloadsLabel: UILabel = {
         let label = UILabel()
         label.text = "downloadsLabel"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
     private var createdLabel: UILabel = {
         let label = UILabel()
         label.text = "createdLabel"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+    // Contains all Labels
     var detailStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -87,16 +79,14 @@ class DetailsView: UIView {
         stackView.distribution = .equalCentering
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
-    }() // Contains all Labels
-    
+    }()
     //  Buttons
     private var bgForButton: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
-    }() // Contains addWeatherButton
-    
+    }()
     private var addTtoFavoritsButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .black
@@ -108,12 +98,10 @@ class DetailsView: UIView {
         button.addTarget(self, action: #selector(didTapAdd), for: .touchUpInside)
         return button
     }()
-    
     @objc func didTapAdd() {
         delegate?.didTapAdd()
         isFavaritNow(isFavorit: true)
     }
-    
     private var removeFromFavoritsButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .white
@@ -127,7 +115,6 @@ class DetailsView: UIView {
         button.addTarget(self, action: #selector(didTapRemove), for: .touchUpInside)
         return button
     }()
-    
     @objc func didTapRemove() {
         isFavaritNow(isFavorit: false)
         delegate?.didTapRemove()
@@ -156,8 +143,7 @@ class DetailsView: UIView {
         viewForImage.addSubview(photoImageView)
         viewForImage.addSubview(activityIndicator)
     }
-
-    //    Constraints of Main Views
+    //  Constraints of Main Views
     private func setupLayoutViews() {
         scrollView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         scrollView.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -179,10 +165,8 @@ class DetailsView: UIView {
         removeFromFavoritsButton.leadingAnchor.constraint(equalTo: bgForButton.leadingAnchor, constant: Constants.offset).isActive = true
         removeFromFavoritsButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
     }
-    
     //  Constraints views in ScrollView
     private func setupLayoutScrollViews() {
-        
         contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
         contentView.topAnchor.constraint(equalTo: scrollView.topAnchor,constant: 0).isActive = true
         contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
@@ -207,7 +191,6 @@ class DetailsView: UIView {
         activityIndicator.centerYAnchor.constraint(equalTo: viewForImage.centerYAnchor).isActive = true
         activityIndicator.centerXAnchor.constraint(equalTo: viewForImage.centerXAnchor).isActive = true
     }
-    
     private func createSubviews() {
         addSubviews()
         setupLayoutViews()
@@ -224,7 +207,6 @@ class DetailsView: UIView {
             self.addTtoFavoritsButton.isHidden = false
         }
     }
-    
     func setupUI(detail: Detail, isFavorit: Bool) {
         nameLabel.text = detail.name
         downloadsLabel.text = String(detail.downloads)
@@ -233,7 +215,6 @@ class DetailsView: UIView {
         if let locattion = detail.location {
             locationLabel.text = locattion
         }
-        
         isFavaritNow(isFavorit: isFavorit)
         
         guard let url = URL(string: detail.urlPhoto) else { return }
